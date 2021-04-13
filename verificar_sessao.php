@@ -15,11 +15,9 @@ if (!isset($_COOKIE["login"])) {
     if (!isset($_SESSION)) {
         session_start();
     }
-    session_unset($_SESSION);
+    session_unset();
     $_SESSION['login'] = '';
     $_SESSION['user'] = '';
     $msg = urlencode('Sessão expirou! Efetue login para continuar!');
     header("location: login.php?retorno=$msg");
 }
-?>
-
